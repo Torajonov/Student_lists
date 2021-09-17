@@ -1,0 +1,32 @@
+{% extends 'todos/base.html' %}
+
+{% block header %}
+<h1>Student ma'lumotlari</h1>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <tr>
+        <th class="short-th" scope="col">Student</th>
+        <td>{{ todo.item }}</td>
+    </tr>
+    <tr>
+        <th class="short-th" scope="col">Oylik tolov</th>
+        {% if todo.completed %}
+        <td>To`langan </td>
+        {% else %}
+        <td>To`lanmagan</td>
+        {% endif %}
+    </tr>
+    <tr>
+        <th class="short-th" scope="col">Ro`yxatga kiritilgan sana</th>
+        <td>{{ todo.created_at }}</td>
+    </tr>
+    <tr>
+        <th class="short-th" scope="col">Ro`yxatdan yangilangan sana</th>
+        <td>{{ todo.updated_at }}</td>
+    </tr>
+</table>
+
+<a href="/" class="btn btn-dark" role="button">Orqaga</a>
+{% endblock %}
